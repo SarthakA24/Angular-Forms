@@ -9,5 +9,5 @@
     Enter Phone Number - 
     <input type="number" placeholder="10 digit Number" name="phoneNumber" required #phoneNumber ngModel>
     <br><br>
-    <input type="submit">
+    <input type="submit" [disabled]="!registerForm.valid">
 </form>
