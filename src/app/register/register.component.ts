@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
+  userName!: string;
+  passWord!: string;
+  phone!:number;
+
   submitDetails() {
     
   }
