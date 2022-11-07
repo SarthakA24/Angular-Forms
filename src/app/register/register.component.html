@@ -1,5 +1,5 @@
 <h2>Registeration Form</h2>
-<form #registerForm = "ngForm" ngNativeValidate (ngSubmit)="submitDetails()">
+<form *ngIf="!welcomeDisplay" #registerForm = "ngForm" ngNativeValidate (ngSubmit)="submitDetails()">
     Enter Username - 
     <input type="text" placeholder="Username" required id="username" name="userName" minlength="5" maxlength="12" #username="ngModel" [(ngModel)]="userName">
     <div *ngIf="username.invalid && username.touched">
@@ -22,3 +22,5 @@
     <br><br>
     <input type="submit" [disabled]="!registerForm.valid">
 </form>
+
+<div *ngIf="welcomeDisplay">Welcome {{userName}}!!</div>
