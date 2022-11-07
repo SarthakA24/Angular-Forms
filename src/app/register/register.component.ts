@@ -11,10 +11,10 @@ export class RegisterComponent implements OnInit {
   passWord!: string;
   phone!:number;
 
-  welcomeDisplay: boolean = false;
+  isSubmitted: boolean = false;
 
   submitDetails() {
-    this.welcomeDisplay = true;
+    this.isSubmitted = true;
   }
 
   constructor() { }
