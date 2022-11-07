@@ -1,13 +1,24 @@
 <h2>Registeration Form</h2>
 <form #registerForm = "ngForm" ngNativeValidate (ngSubmit)="submitDetails()">
     Enter Username - 
-    <input type="text" placeholder="Any Username" required name="username" minlength="5" maxlength="12" #username ngModel>
+    <input type="text" placeholder="Username" required id="username" name="userName" minlength="5" maxlength="12" #username="ngModel" [(ngModel)]="userName">
+    <div *ngIf="username.invalid && username.touched">
+        <div *ngIf="username.errors?.['required']">Username is required!</div>
+        <div *ngIf="username.errors?.['minlength']">username must be 5 characters long!</div>
+    </div>
     <br><br>
     Enter Password - 
-    <input type="password" placeholder="Strong Password" name="password" minlength="8" maxlength="12" required #password ngModel>
+    <input type="password" placeholder="Strong Password" name="passWord" minlength="8" required id="password" #password="ngModel" [(ngModel)]="passWord">
+    <div *ngIf="password.invalid && password.touched">
+        <div *ngIf="password.errors?.['required']">Password is required!</div>
+        <div *ngIf="password.errors?.['minlength']">Password must be 8 characters long!</div>
+    </div>
     <br><br>
     Enter Phone Number - 
-    <input type="number" placeholder="10 digit Number" minlength="10" maxlength="10" name="phoneNumber" required #phoneNumber ngModel>
+    <input type="number" placeholder="10 digit Number" name="phoneNumber" required id="phone" #phoneNumber="ngModel" [(ngModel)]="phone">
+    <div *ngIf="phoneNumber.invalid && phoneNumber.touched">
+        <div *ngIf="phoneNumber.errors?.['required']">Phone Number is required!</div>
+    </div>
     <br><br>
     <input type="submit" [disabled]="!registerForm.valid">
 </form>
