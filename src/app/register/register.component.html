@@ -1,7 +1,12 @@
 <h2>Registeration Form</h2>
-<form ngForm>
+<form #registerForm = "ngForm">
     Enter Username - 
     <input type="text" placeholder="Username" ngModel>
     <br><br>
+    Enter Password - 
+    <input type="password" placeholder="Username" ngModel>
+    <br><br>
+    Enter Phone Number - 
+    <input type="number" placeholder="Username" ngModel>
     <button>Submit</button>
 </form>
