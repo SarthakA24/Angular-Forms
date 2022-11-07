@@ -4,10 +4,10 @@
     <input type="text" placeholder="Any Username" required name="username" minlength="5" maxlength="12" #username ngModel>
     <br><br>
     Enter Password - 
-    <input type="password" placeholder="Strong Password" name="password" required #password ngModel>
+    <input type="password" placeholder="Strong Password" name="password" minlength="8" maxlength="12" required #password ngModel>
     <br><br>
     Enter Phone Number - 
-    <input type="number" placeholder="10 digit Number" name="phoneNumber" required #phoneNumber ngModel>
+    <input type="number" placeholder="10 digit Number" minlength="10" maxlength="10" name="phoneNumber" required #phoneNumber ngModel>
     <br><br>
     <input type="submit" [disabled]="!registerForm.valid">
 </form>
